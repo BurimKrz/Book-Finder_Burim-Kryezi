@@ -22,7 +22,7 @@ export class BookSearchComponent implements OnInit {
   //get 20 random books for the oninit
   getRandomBooks(): void {
     //im lazy dont judge me
-    const randomQuery = 'random'; // Example random query
+    const randomQuery = 'random'; // random query
     this.googleBooksService.searchBooks(randomQuery, 20).subscribe(
       (data: any) => {
         this.results = data.items;
@@ -50,7 +50,7 @@ export class BookSearchComponent implements OnInit {
   //trim the text for a shorter descrition 
   truncateDescription(description: string): string {
     const maxLength = 150;
-    if (description && description.length > maxLength) { // Added a check for description existence
+    if (description && description.length > maxLength) {
       return description.substring(0, maxLength) + '...';
     } else {
       return description;
