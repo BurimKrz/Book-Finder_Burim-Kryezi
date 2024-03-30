@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="input-group">
+        <input type="text" [(ngModel)]="query" class="form-control" placeholder="Search for books..." />
+        <button class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="results.length > 0" class="mt-4">
+    <h2 class="d-flex justify-content-center mb-3 p-2 text-white">Search Results</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <div *ngFor="let book of results" class="col">
+        <div class="card h-100 custom-card-bg">
+          <a *ngIf="book.volumeInfo.title" [href]="'https://books.google.com/books?id=' + book.id" target="_blank">
+            <img *ngIf="book.volumeInfo.imageLinks" [src]="book.volumeInfo.imageLinks.thumbnail" alt="Book cover" class="card-img-top book-image" />
+          </a><hr>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">
+              <a *ngIf="book.volumeInfo.title" [href]="'https://books.google.com/books?id=' + book.id" target="_blank" class="text-dark text-decoration-none">{{ book.volumeInfo.title }}</a>
+            </h5><hr>
+            <p class="card-text flex-grow-1">{{ truncateDescription(book.volumeInfo.description) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

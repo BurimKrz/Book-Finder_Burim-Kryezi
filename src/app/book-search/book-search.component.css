@@ -1,0 +1,85 @@
+/* book-search.component.css */
+
+.form-control {
+  font-size: 20px;
+}
+
+.card-title a {
+  color: inherit; /* To inherit text color */
+}
+
+.card-title a:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+
+.book-search-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.search-input-container {
+  display: flex;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.search-results {
+  list-style-type: none;
+  padding: 0;
+  
+}
+
+.book-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  
+}
+
+.book-item img {
+  max-width: 100px;
+  margin-right: 20px;
+
+}
+
+.book-title {
+  font-weight: bold;
+}
+
+.book-description {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .book-item img {
+    max-width: 80px;
+  }
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 16px;
+}
+
+.book-image {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  max-width: 100%;
+  height: auto;
+}
+
+.custom-card-bg {
+  background-color: rgba(233, 229, 229, 0.904); /* Change the last value (alpha) to adjust transparency */
+}
